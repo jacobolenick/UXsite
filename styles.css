@@ -1,0 +1,591 @@
+/* Sofia Pro font import (adjust the URL based on your setup) */
+@font-face {
+    font-family: 'Sofia Pro';
+    src: url('path-to-your-font-file/SofiaPro-Regular.woff2') format('woff2'),
+         url('path-to-your-font-file/SofiaPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sofia Pro';
+    src: url('path-to-your-font-file/SofiaPro-Bold.woff2') format('woff2'),
+         url('path-to-your-font-file/SofiaPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: sofia-pro, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    padding-top: 60px; /* Add this to prevent content from being hidden behind the sticky nav */
+}
+
+nav {
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000;
+    font-family: sofia-pro, Arial, sans-serif;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links li a {
+    color: #666666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: normal;
+}
+
+.nav-links li a:hover {
+    color: #333333;
+}
+
+.nav-links li a.active {
+    color: #000000;
+    font-weight: 600;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+}
+
+.social-links a {
+    color: #666666;
+    text-decoration: none;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #333333;
+}
+
+.social-links i {
+    font-size: 1.2rem;
+}
+
+.hero {
+    height: calc(80vh - 60px);
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    position: relative;
+    margin-top: 60px;
+}
+
+.hero .container {
+    max-width: 1300px;
+    padding-left: 32px;
+    padding-right: 32px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 550px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 1rem;
+    color: #000000;
+    font-family: sofia-pro, Arial, sans-serif;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.hero-text h1 .highlight {
+    color: #4CAF50;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: #666666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.hero-image {
+    flex: 1.25;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    object-fit: cover;
+}
+
+.image-pill {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 1;
+    font-family: sofia-pro, Arial, sans-serif;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #000000;
+    margin: 2px 0;
+    transition: 0.4s;
+}
+
+.linkedin-button {
+    display: inline-block;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 16px;
+    font-family: sofia-pro, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.linkedin-button:hover {
+    background-color: #333333;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 60px;
+        flex-direction: column;
+        background-color: #ffffff;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 2.5rem 0;
+    }
+
+    .social-links {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text, .hero-image {
+        max-width: 100%;
+    }
+
+    .case-studies-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 4rem 0;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .case-study-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+.case-studies {
+    padding: 4rem 32px 6rem;
+    background-color: #ffffff;
+}
+
+.case-studies .container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: sofia-pro, Arial, sans-serif;
+}
+
+.case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.case-study-card {
+    background-color: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.case-study-card:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+    position: relative;
+    padding-top: 66.67%;
+    overflow: hidden;
+}
+
+.card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.case-study-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.password-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 1;
+}
+
+.case-study-card h3 {
+    font-size: 24px;
+    margin: 1rem;
+    color: #000000;
+}
+
+.case-study-card p {
+    font-size: 16px;
+    color: #666666;
+    margin: 0 1rem 1rem;
+}
+
+.case-study-link {
+    display: inline-block;
+    margin: 0 1rem 1rem;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.case-study-link:hover {
+    color: #45a049;
+}
+
+@media screen and (max-width: 1024px) {
+    .case-studies-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section-title {
+        font-size: 28px;
+    }
+
+    .case-study-card h3 {
+        font-size: 20px;
+    }
+
+    .case-study-card p {
+        font-size: 14px;
+    }
+}
+
+.linkedin-stats {
+    padding: 4rem 32px;
+    margin-bottom: 84px; /* Added 84px bottom margin */
+    background-color: #ffffff;
+}
+
+.linkedin-stats .container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.stats-box {
+    background-color: #f5f5f5; /* Light gray background */
+    border-radius: 24px;
+    padding: 3rem;
+    text-align: center;
+}
+
+.stats-box h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 1rem;
+    font-family: sofia-pro, Arial, sans-serif;
+}
+
+.stats-box p {
+    font-size: 18px;
+    color: #666666;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.linkedin-button {
+    display: inline-block;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 16px;
+    font-family: sofia-pro, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.linkedin-button:hover {
+    background-color: #333333; /* Slightly lighter black on hover */
+}
+
+@media screen and (max-width: 768px) {
+    .linkedin-stats {
+        padding: 3rem 16px;
+        margin-bottom: 64px; /* Slightly reduced margin for mobile */
+    }
+
+    .stats-box {
+        padding: 2rem;
+    }
+
+    .stats-box h2 {
+        font-size: 28px;
+    }
+
+    .stats-box p {
+        font-size: 16px;
+    }
+}
+
+.footer {
+    background-color: #ffffff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: #666666; /* Medium gray */
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #333333; /* Darker gray on hover */
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 1.5rem 0;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.footer .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15vw;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.2);
+    white-space: nowrap;
+    z-index: 0;
+}
+
+.footer-nav {
+    margin-bottom: 2rem;
+}
+
+.footer .nav-links {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer .nav-links li {
+    margin: 0 1rem;
+}
+
+.footer .nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: opacity 0.3s ease;
+}
+
+.footer .nav-links a:hover {
+    opacity: 0.7;
+}
+
+.footer .social-links {
+    display: flex;
+    justify-content: center;
+}
+
+.footer .social-links a {
+    color: #ffffff;
+    font-size: 24px;
+    margin: 0 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.footer .social-links a:hover {
+    opacity: 0.7;
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 3rem 0;
+    }
+
+    .footer-background {
+        font-size: 20vw;
+    }
+
+    .footer .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .nav-links li {
+        margin: 0.5rem 0;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+});

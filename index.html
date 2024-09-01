@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jacob Olenick</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'your-kit-id',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+   <script>
+    PhosphorIcons.replace({
+        weight: 'bold' // or 'light', 'regular', 'thin', 'fill'
+    });
+</script>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">Jacob Olenick</div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#work" class="active">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#notes">Notes</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+            <div class="social-links">
+                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer"><i class="ph-twitter-logo"></i></a>
+                <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer"><i class="ph-linkedin-logo"></i></a>
+                <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer"><i class="ph-instagram-logo"></i></a>
+            </div>
+        </div>
+    </nav>
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Senior UX Designer @ <span class="highlight">Publix</span> helping make online shopping more enjoyable</h1>
+                    <p class="hero-description">On my journey, I've helped Cisco build an AI dashboard, Wells Fargo's enterprise customer bank easier, and Paramount+ watchers find their favorite shows and movies.</p>
+                    <a href="https://www.linkedin.com/in/jacobmolenick" class="linkedin-button" target="_blank" rel="noopener noreferrer">Follow me on LinkedIn</a>
+                </div>
+                <div class="hero-image">
+                    <img src="jacobpic.jpg" alt="Jacob Olenick">
+                    <div class="image-pill">Yes, I'm an A's fan</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="case-studies">
+        <div class="container">
+            <h2 class="section-title">Recent Projects</h2>
+            <div class="case-studies-grid">
+                <div class="case-study-card">
+                    <div class="card-image">
+                        <img src="AXS.jpg" alt="Case Study 1">
+                        <span class="password-tag">Password Protected</span>
+                    </div>
+                    <h3>Internal tool for ticket teller to sell event tickets</h3>
+                    <p>An internal tool that was also white labeled to B2B clients.</p>
+                    <a href="#" class="case-study-link">View Case Study <i class="ph-arrow-right"></i></a>
+                </div>
+                <div class="case-study-card">
+                    <div class="card-image">
+                        <img src="crtside.jpg" alt="Case Study 2">
+                        <span class="password-tag">Password Protected</span>
+                    </div>
+                    <h3>Get scholarships as a basketball athlete</h3>
+                    <p>A mobile app that helps athletes get scholarships.</p>
+                    <a href="#" class="case-study-link">View Case Study <i class="ph-arrow-right"></i></a>
+                </div>
+                <div class="case-study-card">
+                    <div class="card-image">
+                        <img src="Orgspace.jpg" alt="Case Study 3">
+                        <span class="password-tag">Password Protected</span>
+                    </div>
+                    <h3>Easily manage your organization and allocations</h3>
+                    <p>Ba better UX redesign and design system built on Tailwind.</p>
+                    <a href="#" class="case-study-link">View Case Study <i class="ph-arrow-right"></i></a>
+                </div>
+                <div class="case-study-card">
+                    <div class="card-image">
+                        <img src="Wells Fargo.jpg" alt="Case Study 4">
+                        <span class="password-tag">Password Protected</span>
+                    </div>
+                    <h3>Commercial banking made easy for the top companies</h3>
+                    <p>Wells Fargos enterprise banking platform called Vantage.</p>
+                    <a href="#" class="case-study-link">View Case Study <i class="ph-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="linkedin-stats">
+        <div class="container">
+            <div class="stats-box">
+                <h2>Over 2 million people read my content on LinkedIn</h2>
+                <p>Followed by over 11,000 people and millions read my content monthly.</p>
+                <a href="https://www.linkedin.com/in/jacobmolenick" class="linkedin-button" target="_blank" rel="noopener noreferrer">Follow me on LinkedIn</a>
+            </div>
+        </div>
+    </section>
+    <main>
+        <!-- Your main content goes here -->
+    </main>
+    <script src="script.js"></script>
+    <script>
+        PhosphorIcons.replace({
+            weight: 'bold' // or 'light', 'regular', 'thin', 'fill'
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+        });
+    </script>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://www.x.com/jacobolenick" target="_blank" rel="noopener noreferrer">X</a>
+                <a href="https://www.linkedin.com/in/jacobmolenick" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/jacob.olenick" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
