@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Jacob Olenick</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Jacob Olenick</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="slider-section">
+        <div class="container">
+            <div class="slider">
+                <div class="slider-container">
+                    <div class="slide active">
+                        <img src="desk.jpg" alt="Slide 1">
+                        <div class="slide-pill">My cozy home office</div>
+                    </div>
+                    <div class="slide">
+                        <img src="as.png" alt="Slide 2">
+                        <div class="slide-pill">at the A's game here in Las Vegas</div>
+                    </div>
+                    <div class="slide">
+                        <img src="mj.png" alt="Slide 3">
+                        <div class="slide-pill">My wife and I in Hawaii</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updated about section -->
+    <section class="about-content">
+        <div class="container">
+            <div class="text-container">
+                <h2>About My Work</h2>
+                <p>
+                    Hello 👋
+                    I'm a Product Designer with an eye for designing premium interfaces without lacking thoughtful UX. Since 2019, I've been designing Mobile Apps, Consumer Apps, and Enterprise Software for startups and Fortune 500 companies. Recently. When not pushing pixels or meeting with stakeholders, I spend some of my free time helping other designers by providing mentorship.
+                    I currently work for Publix, but I have also worked at Credit One Bank, Cisco, Wells Fargo, AXS.com, and Paramount Plus.
+                </p>
+                <p>
+                    I'm a husband to my wonderful wife, a dad to my lovable cat "Patches", and a friend.
+                </p>
+                    Sport teams I love: Cleveland Browns and Las Vegas Raiders, Athletics, Las Vegas Aces, Vegas Golden Knights, Machester United, LA Galaxy, Los Angeles Lakers, Las Vegas Lights, and the Las Vegas Aviators. 
+                    Things I enjoy outside of work:
+                    ⚾️ Going to sporting events with friends and family
+                    ☕️ I love trying new coffee shops around the city and when traveling
+                    ✈️ I love traveling and seeing new parts of the world
+                    🍿Seeing movies, concerts, and plays is my love language               
+                 </p>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.slider-container');
+            const slides = document.querySelectorAll('.slide');
+            const indicators = document.querySelectorAll('.indicator');
+            let currentSlide = 0;
+            let intervalId;
+
+            function showSlide(index) {
+                slides[currentSlide].classList.remove('active');
+                indicators[currentSlide].classList.remove('active');
+                currentSlide = (index + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+                indicators[currentSlide].classList.add('active');
+                slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            }
+
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+
+            function startAutoPlay() {
+                intervalId = setInterval(nextSlide, 2000); // Change slide every 2 seconds
+            }
+
+            function stopAutoPlay() {
+                clearInterval(intervalId);
+            }
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    showSlide(index);
+                    stopAutoPlay(); // Stop auto-play when user interacts
+                    startAutoPlay(); // Restart auto-play
+                });
+            });
+
+            // Start auto-play
+            startAutoPlay();
+
+            // Optional: Pause auto-play when hovering over the slider
+            slider.addEventListener('mouseenter', stopAutoPlay);
+            slider.addEventListener('mouseleave', startAutoPlay);
+        });
+    </script>
+       <script src="script.js"></script>
+       <script>
+           PhosphorIcons.replace({
+               weight: 'bold' // or 'light', 'regular', 'thin', 'fill'
+           });
+       </script>
+       <script>
+           document.addEventListener('DOMContentLoaded', (event) => {
+               const hamburger = document.querySelector('.hamburger');
+               const navLinks = document.querySelector('.nav-links');
+   
+               hamburger.addEventListener('click', () => {
+                   navLinks.classList.toggle('active');
+                   hamburger.classList.toggle('active');
+               });
+           });
+       </script>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://www.x.com/jacobolenick" target="_blank" rel="noopener noreferrer">X</a>
+                <a href="https://www.linkedin.com/in/jacobmolenick" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/jacob.olenick" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
