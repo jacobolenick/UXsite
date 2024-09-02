@@ -300,6 +300,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     padding: 10px 20px;
     border-radius: 20px;
     font-size: 1rem;
+    font-weight: 600;
 }
 
 .slider-section .slide:not(.active) .slide-pill {
