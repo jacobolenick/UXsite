@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     padding: 0 20px;
 }
 
-.slider {
+.slider-section .slider {
     position: relative;
     overflow: hidden;
     border-radius: 24px;
@@ -272,55 +272,47 @@ document.addEventListener('DOMContentLoaded', (event) => {
     margin-top: 64px; /* Added top margin */
 }
 
-.slider-container {
+.slider-section .slider-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
     height: 100%;
 }
 
-.slide {
-    flex: 0 0 100%;
-    max-width: 100%;
-    height: 100%;
+.slider-section .slide {
+    min-width: 100%;
+    box-sizing: border-box;
     position: relative;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
 }
 
-.slide.active {
-    opacity: 1;
-}
-
-.slide img {
+.slider-section .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Ensure the image covers the entire slider area */
+    display: block;
 }
 
-.slide-pill {
+.slider-section .slide-pill {
     position: absolute;
     bottom: 20px;
     left: 20px;
     background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 8px 16px;
+    color: #fff;
+    padding: 10px 20px;
     border-radius: 20px;
-    font-size: 14px;
-    font-weight: bold;
-    transition: opacity 0.3s ease-in-out;
+    font-size: 1rem;
 }
 
-.slide:not(.active) .slide-pill {
+.slider-section .slide:not(.active) .slide-pill {
     opacity: 0;
 }
 
-.slider-indicators {
+.slider-section .slider-indicators {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
-.indicator {
+.slider-section .indicator {
     width: 12px;
     height: 12px;
     border-radius: 50%;
@@ -330,24 +322,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
     transition: background-color 0.3s;
 }
 
-.indicator.active {
+.slider-section .indicator.active {
     background-color: #333;
 }
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-    .slider {
+    .slider-section .slider {
         height: 500px;
     }
 }
 
 @media (max-width: 768px) {
-    .slider {
+    .slider-section .slider {
         height: 400px;
         margin-top: 40px; /* Reduced top margin for mobile */
     }
     
-    .slide-pill {
+    .slider-section .slide-pill {
         font-size: 12px;
         padding: 6px 12px;
     }
@@ -408,5 +400,188 @@ document.addEventListener('DOMContentLoaded', (event) => {
     .about-content p {
         font-size: 1rem;
     }
+}
+
+.past-employers {
+    padding: 80px 0;
+    background-color: #ffffff; /* Keep the section background white */
+}
+
+.past-employers .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.past-employers h2 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.employers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.employer-card {
+    background-color: #f8f8f8; /* Same color as the container above */
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left; /* Left-align text */
+}
+
+.employer-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px; /* 16px gap between image and text */
+}
+
+.employer-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 8px; /* 8px gap between h3 and paragraph */
+}
+
+.employer-card p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 600; /* Make the role title semi-bold */
+    margin-bottom: 16px; /* 16px gap between paragraph and list */
+}
+
+.employer-card ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.employer-card ul li {
+    margin-bottom: 10px;
+}
+
+/* Recommendations slider */
+.recommendations {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.recommendations .container {
+    max-width: 800px; /* Make the recommendations slider not as wide */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.recommendations h2 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.recommendations .slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.recommendations .slider-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.recommendations .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.recommendations .slide.active {
+    opacity: 1;
+}
+
+.recommendations .recommendation-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+
+.recommendations .slide h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.recommendations .slide .title {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 600; /* Semi-bold title */
+    margin-bottom: 16px;
+}
+
+.recommendations .slide .recommendation-text {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.recommendations .slider-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.recommendations .indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.recommendations .indicator.active {
+    background-color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .employers-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+#scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 48px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s, background-color 0.3s;
+    z-index: 1000;
+}
+
+#scroll-to-top:hover {
+    background-color: #333333;
+}
+
+#scroll-to-top.show {
+    opacity: 1;
 }
 
