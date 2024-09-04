@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXS</title>
+    <link rel="stylesheet" href="axs.css">
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'your-kit-id',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+   <script>
+    PhosphorIcons.replace({
+        weight: 'bold' // or 'light', 'regular', 'thin', 'fill'
+    });
+</script>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Jacob Olenick</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#notes">Notes</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-image"></div>
+                <div class="hero-content">
+                    <h2>AXS</h2>
+                    <p>An internal tool that was also white labeled to B2B companies for event ticket sales</p>
+                    <div class="pill-container">
+                        <div class="pill-overlay">Product Design</div>
+                        <div class="pill-overlay">2021</div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-container">
+                <a href="index.html" class="back-button">Back</a>
+            </div>
+        </section>
+
+        <section class="case-study">
+
+            <img src="axs123.jpg" alt="AXS Dashboard" class="case-study-image">
+
+            <p>I was part of a team that was tasked with redesigning a functional product that hadn't been updated in 16 years. The project had a tight deadline of 3 months, and the goal was to create usable software that would bring in revenue for the company, either through its own brand or through white labeling to other companies.</p>
+            <p>To gather insights and inform our design decisions, I worked with a team of researchers to interview real users on a weekly basis. I also needed to balance the desire to create a fresh and new design with the need to maintain some degree of familiarity for users who had been using the product for 16 years.</p>
+            <p>To test my designs, I created low-fidelity mockups and prototypes using tools like Zeplin and Sketch and then tested those designs with real, active users. Through this project, I learned how to solve complex problems as part of a team of designers.</p>
+            <h3>Defining the problems with the old Inventory software</h3>
+            <p>The old software was not accessible. Our users said they would get eye strain from looking at the small text and bright white background in the dark while at the ticketing booth.</p>
+            <p>There wasn't a great way of quickly searching venues and events or handling triage. </p>
+            <p>Another problem with the old software was there wasn't a way to search by Ticket Type, Comps, VIP, Handicap Accessible, Different Tiers, etc. </p>
+            
+            <h3>Our Approach</h3>
+            <p>We adopted a user-centered design process, conducting extensive research with both internal teams and potential B2B clients. This approach allowed us to create a modular design system that could be easily customized while retaining core functionality.</p>
+            
+            <div class="image-slider">
+                <div class="slider-container">
+                    <img src="axs1.jpg" alt="AXS Image 1" class="slider-image">
+                    <img src="2.jpg" alt="AXS Image 2" class="slider-image">
+                    <img src="3.jpg" alt="AXS Image 3" class="slider-image">
+                    <img src="4.jpg" alt="AXS Image 3" class="slider-image">
+                    <img src="5.jpg" alt="AXS Image 3" class="slider-image">
+                    <img src="6.jpg" alt="AXS Image 3" class="slider-image">
+                </div>
+                <div class="slider-indicators"></div>
+            </div>
+        
+        </section>
+
+        <!-- Add other page content here -->
+    </main>
+    <script src="script.js"></script>
+    <script>
+        PhosphorIcons.replace({
+            weight: 'bold' // or 'light', 'regular', 'thin', 'fill'
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+        });
+    </script>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://www.x.com/jacobolenick" target="_blank" rel="noopener noreferrer">X</a>
+                <a href="https://www.linkedin.com/in/jacobmolenick" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/jacob.olenick" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        (function() {
+            if (!sessionStorage.getItem('authenticated')) {
+                window.location.href = 'index.html';
+            }
+        })();
+    </script>
+</body>
+</html>
