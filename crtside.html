@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXS</title>
+    <link rel="stylesheet" href="crtside.css">
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'your-kit-id',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+   <script>
+    PhosphorIcons.replace({
+        weight: 'bold' // or 'light', 'regular', 'thin', 'fill'
+    });
+</script>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Jacob Olenick</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#notes">Notes</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-image"></div>
+                <div class="hero-content">
+                    <h2>Crtside</h2>
+                    <p>A Basketball App that helps athletes get scholarships</p>
+                    <div class="pill-container">
+                        <div class="pill-overlay">Product Design</div>
+                        <div class="pill-overlay">2021</div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-container">
+                <a href="index.html" class="back-button">Back</a>
+            </div>
+        </section>
+
+        <section class="case-study">
+            <img src="crt1.jpg" alt="crt Image 1" class="case-study-image">
+
+            <p>I was the lead Product Designer at Crt Side, helping drive the design for the startup. The CEO's and business goals were to design a beautiful app and prototype MVP for them to secure some funding to hire a remote developer team and then build the MVP Product. </p>
+            <p>The company was able to secure its funding but shut down soon after.  </p>
+            <p>My design process was a little different than how I would go about it at my full-time job. Since I was brought in as a freelancer and was the sole designer, I had a lot of freedom, but we also didn't have many resources.  </p>
+            <p>I would have weekly meetings with the CEO and Marketing Director to discuss what features they'd love to add. I would then take the week to design them.  </p>
+            <p>I noticed I was reusing parts over and over, so I took the initiative to build out a small starter Design System and component library. </p> 
+            <p>I would build these components using Figma's auto-layout feature to ensure that my designs were consistent.  </p>
+            <p>After I finished a few features, I would prototype what we had so far and share that with the stakeholders and management team. </p>
+            <p>We did have a few athletes who would use the app when it launched and would test the prototypes, and we would run features by them as a small user research operation. </p>
+
+            <img src="crt2.jpg" alt="crt Image 1" class="case-study-image">
+            <img src="crt4.jpg" alt="crt Image 1" class="case-study-image">
+
+            <h3 class="h3">Prototype</h3>
+            <div class="video-container">
+                <video id="prototypeVideo" width="100%" controls>
+                    <source src="videocrt.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <style>
+                .video-container {
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+                video {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                }
+            </style>
+        </section>
+
+        <!-- Add other page content here -->
+    </main>
+    <script src="script.js"></script>
+    <script>
+        PhosphorIcons.replace({
+            weight: 'bold' // or 'light', 'regular', 'thin', 'fill'
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+        });
+    </script>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://www.x.com/jacobolenick" target="_blank" rel="noopener noreferrer">X</a>
+                <a href="https://www.linkedin.com/in/jacobmolenick" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/jacob.olenick" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        (function() {
+            if (!sessionStorage.getItem('authenticated')) {
+                window.location.href = 'index.html';
+            }
+        })();
+    </script>
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeLightbox = document.querySelector('.close-lightbox');
+
+            // Get all images in the case study
+            const images = document.querySelectorAll('.case-study-image, .slider-image');
+
+            images.forEach(img => {
+                img.addEventListener('click', function() {
+                    lightbox.style.display = 'flex';
+                    lightboxImg.src = this.src;
+                });
+            });
+
+            closeLightbox.addEventListener('click', function() {
+                lightbox.style.display = 'none';
+            });
+
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    lightbox.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
