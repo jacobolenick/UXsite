@@ -18,10 +18,18 @@ function checkPassword(url) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Check if slider has already been initialized
+    if (window.sliderInitialized) return;
+    
     const sliderContainer = document.querySelector('.slider-container');
+    if (!sliderContainer) return; // Exit if slider container doesn't exist
+    
     const sliderIndicators = document.querySelector('.slider-indicators');
     const images = sliderContainer.querySelectorAll('.slider-image');
     let currentIndex = 0;
+
+    // Clear existing indicators
+    sliderIndicators.innerHTML = '';
 
     // Create indicators
     images.forEach((_, index) => {
@@ -49,5 +57,14 @@ document.addEventListener('DOMContentLoaded', function() {
     goToSlide(0);
 
     // Auto-advance slides every 5 seconds
-    setInterval(nextSlide, 5000);
+    const intervalId = setInterval(nextSlide, 5000);
+
+    // Mark slider as initialized
+    window.sliderInitialized = true;
+
+    // Clean up function
+    return function cleanup() {
+        clearInterval(intervalId);
+        window.sliderInitialized = false;
+    };
 });
